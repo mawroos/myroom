@@ -1,0 +1,1003 @@
+/* ==========================================================================
+   My Room (myroom.co.nz) - Static Website Stylesheet
+   Recreated from the original Hot Baby Shop (style2) design without Joomla
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Comic+Neue:wght@400;700&display=swap');
+
+:root {
+  --sage-green: #b5ddbb;
+  --sage-green-dark: #96cca0;
+  --orange: #fc6f2e;
+  --orange-band: #fc7b34;
+  --navy-header: #222836;
+  --charcoal-footer: #161920;
+  --text-body: #8d9198;
+  --text-dark: #333333;
+  --text-heading: #242424;
+  --footer-text: #909aad;
+  --border-light: #e1e9f2;
+  --bg-light: #f9fbfa;
+  --white: #ffffff;
+  --container-width: 1200px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-body);
+  background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--orange);
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--sage-green-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   Header / Logo Row
+   ========================================================================== */
+
+.logorow {
+  padding: 22px 0;
+  background: var(--white);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sparky_logo_image a {
+  display: inline-block;
+}
+
+.sparky_logo_image img {
+  height: 70px;
+  width: auto;
+  display: block;
+}
+
+.header-contact {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.header-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.header-contact-phone {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+}
+
+.header-contact-phone i {
+  color: var(--orange);
+  font-size: 15px;
+}
+
+.header-contact-phone:hover {
+  border-color: var(--sage-green);
+  background-color: var(--sage-green);
+  color: var(--white);
+}
+
+.header-contact-phone:hover i {
+  color: var(--white);
+}
+
+.header-contact-email {
+  background-color: var(--orange);
+  color: var(--white) !important;
+}
+
+.header-contact-email:hover {
+  background-color: var(--sage-green);
+  color: var(--white) !important;
+}
+
+/* ==========================================================================
+   Top Navigation Bar
+   ========================================================================== */
+
+.topmenurow {
+  background: transparent;
+}
+
+.nav-wrapper {
+  background: var(--sage-green);
+  position: relative;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  width: 100%;
+  background: var(--sage-green);
+  color: var(--white);
+  border: none;
+  padding: 14px 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: left;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul.mnu_topmenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background: var(--sage-green);
+}
+
+ul.mnu_topmenu > li {
+  position: relative;
+  background: var(--sage-green);
+  transition: background-color 0.2s ease;
+}
+
+ul.mnu_topmenu > li > a {
+  display: block;
+  color: var(--white);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 15px 18px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+ul.mnu_topmenu > li:hover,
+ul.mnu_topmenu > li.active {
+  background: var(--orange);
+}
+
+ul.mnu_topmenu > li:hover > a,
+ul.mnu_topmenu > li.active > a {
+  color: var(--white);
+}
+
+/* Dropdown Submenus */
+ul.mnu_topmenu > li > ul.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: var(--orange);
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  z-index: 1000;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+ul.mnu_topmenu > li:hover > ul.submenu {
+  display: block;
+}
+
+ul.mnu_topmenu > li > ul.submenu > li {
+  margin: 0;
+  padding: 0;
+}
+
+ul.mnu_topmenu > li > ul.submenu > li > a {
+  display: block;
+  padding: 9px 20px;
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: none;
+  transition: background-color 0.15s ease;
+}
+
+ul.mnu_topmenu > li > ul.submenu > li > a:hover {
+  background: rgba(0, 0, 0, 0.12);
+  color: var(--white);
+}
+
+/* ==========================================================================
+   Hero Carousel (Home Page)
+   ========================================================================== */
+
+.carouselrow {
+  position: relative;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.carousel-viewport {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+}
+
+.carousel-slide img {
+  width: 100%;
+  max-height: 460px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid var(--sage-green);
+  color: var(--sage-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  font-size: 18px;
+}
+
+.carousel-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.carousel-btn-prev {
+  left: 16px;
+}
+
+.carousel-btn-next {
+  right: 16px;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: transparent;
+  border: 3px solid var(--sage-green);
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-dot:hover,
+.carousel-dot.is-selected {
+  border-color: var(--orange);
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   Six Category Feature Tiles (.bannersrow)
+   ========================================================================== */
+
+.bannersrow {
+  background: var(--sage-green);
+  padding: 25px 0;
+}
+
+.banners-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.view {
+  width: 180px;
+  height: 180px;
+  margin: 10px 0;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.view .mask {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.view img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  transition: all 0.2s ease-in;
+}
+
+.view h2 {
+  font-family: 'Comic Sans MS', 'Comic Neue', 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  font-size: 22px;
+  font-weight: 400;
+  padding: 10px;
+  margin: 0 0 12px 0;
+  background: none;
+}
+
+.view a.buttons {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 14px;
+  background: var(--sage-green);
+  color: var(--white) !important;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.view a.buttons:hover {
+  background: var(--charcoal-footer);
+}
+
+/* Original view-third hover effect */
+.view-third .mask {
+  background: rgba(252, 111, 46, 0.94);
+  opacity: 0;
+  transform: translate(260px, -100px) rotate(180deg);
+  transition: all 0.35s ease-in-out;
+}
+
+.view-third h2 {
+  transform: translateY(-80px);
+  transition: all 0.25s ease-in-out;
+}
+
+.view-third a.buttons {
+  transform: translateY(-140px);
+  transition: all 0.25s ease-in-out;
+}
+
+.view-third:hover .mask,
+.view-third:focus-within .mask {
+  opacity: 1;
+  transform: translate(0px, 0px) rotate(0deg);
+}
+
+.view-third:hover h2,
+.view-third:focus-within h2 {
+  transform: translateY(0px);
+  transition-delay: 0.15s;
+}
+
+.view-third:hover a.buttons,
+.view-third:focus-within a.buttons {
+  transform: translateY(0px);
+  transition-delay: 0.1s;
+}
+
+.tile-caption {
+  display: none;
+  text-align: center;
+  color: var(--white);
+  font-family: 'Comic Sans MS', 'Comic Neue', 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.tile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Category Page Header Banner (.headerrow)
+   ========================================================================== */
+
+.headerrow {
+  background: var(--navy-header);
+  text-transform: none;
+  color: var(--white);
+  font-weight: 300;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.headerrow-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  min-height: 201px;
+}
+
+.headerrow-text {
+  padding: 30px 0;
+}
+
+.headerrow-text .heading {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+
+.headerrow-text .subheading {
+  font-size: 20px;
+  font-weight: 300;
+  color: #dce3ec;
+}
+
+.headerrow-image img {
+  display: block;
+  max-height: 201px;
+  width: auto;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   Main Content Area (.content_sparky)
+   ========================================================================== */
+
+.content_sparky {
+  padding: 50px 0;
+}
+
+.section-heading {
+  font-family: 'Comic Sans MS', 'Comic Neue', 'Open Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  margin: 0 0 15px 0;
+  padding-bottom: 12px;
+  background: url('../images/heading_bg2.png') no-repeat left bottom;
+}
+
+.lead-text {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #5c616a;
+  max-width: 850px;
+  margin-bottom: 30px;
+}
+
+/* Category & Subcategory Showcase Cards */
+.subcategory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin: 30px 0 40px;
+}
+
+.subcategory-card {
+  background: var(--white);
+  border: 1px solid #ebeff5;
+  border-top: 4px solid var(--sage-green);
+  border-radius: 4px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-top-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.subcategory-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+  border-top-color: var(--orange);
+}
+
+.subcategory-card h3 {
+  font-family: 'Comic Sans MS', 'Comic Neue', 'Open Sans', sans-serif;
+  font-size: 19px;
+  color: var(--text-dark);
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.subcategory-card p {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: var(--text-body);
+}
+
+.subcategory-card .card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.subcategory-card .tag {
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
+  color: #555;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* Enquiry Callout Banner (Replaces Online Ordering / Cart) */
+.enquiry-banner {
+  background: var(--bg-light);
+  border: 2px solid var(--sage-green);
+  border-radius: 6px;
+  padding: 32px;
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.enquiry-banner-content h3 {
+  font-family: 'Comic Sans MS', 'Comic Neue', 'Open Sans', sans-serif;
+  font-size: 22px;
+  color: var(--text-dark);
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+}
+
+.enquiry-banner-content p {
+  margin: 0;
+  font-size: 15px;
+  color: #5c616a;
+}
+
+.enquiry-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  color: var(--white) !important;
+  background-color: var(--sage-green);
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--orange);
+  color: var(--white) !important;
+}
+
+.btn-orange {
+  background-color: var(--orange);
+}
+
+.btn-orange:hover {
+  background-color: var(--navy-header);
+}
+
+/* ==========================================================================
+   Contact Page Cards (No Contact Form - Email & Phone Only)
+   ========================================================================== */
+
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin: 30px 0 40px;
+}
+
+.contact-card {
+  background: var(--white);
+  border: 1px solid #e6ecf2;
+  border-top: 4px solid var(--orange);
+  border-radius: 6px;
+  padding: 32px 26px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--sage-green);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+
+.contact-card h3 {
+  font-family: 'Comic Sans MS', 'Comic Neue', 'Open Sans', sans-serif;
+  font-size: 20px;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+}
+
+.contact-card p {
+  margin: 0 0 10px 0;
+  font-size: 15px;
+  color: #555;
+}
+
+.contact-card .contact-highlight {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--orange);
+  margin: 10px 0;
+}
+
+.contact-card .contact-highlight:hover {
+  color: var(--sage-green-dark);
+}
+
+/* Content Page Box (About Us, Terms) */
+.article-box {
+  background: var(--white);
+  border: 1px solid #ebeff5;
+  border-radius: 6px;
+  padding: 36px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.article-box h2 {
+  font-family: 'Comic Sans MS', 'Comic Neue', 'Open Sans', sans-serif;
+  color: var(--text-dark);
+  font-size: 24px;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+}
+
+.article-box h3 {
+  color: var(--text-dark);
+  font-size: 17px;
+  margin: 24px 0 8px 0;
+  text-transform: uppercase;
+}
+
+.article-box p {
+  color: #5c616a;
+  font-size: 15px;
+  line-height: 1.75;
+  margin: 0 0 16px 0;
+}
+
+/* Terms 2-Column Table (matching original /terms layout) */
+.terms-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.terms-table th,
+.terms-table td {
+  border: 1px solid #d4dce6;
+  padding: 14px 18px;
+  vertical-align: top;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #0f243e;
+}
+
+.terms-table th {
+  width: 220px;
+  font-weight: 700;
+  background-color: #f7faf8;
+}
+
+/* ==========================================================================
+   Social Media Row (.bottomrow2)
+   ========================================================================== */
+
+.bottomrow2 {
+  background: var(--orange-band);
+  color: var(--text-dark);
+  padding: 32px 0;
+}
+
+.bottomrow2-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.bottomrow2 h3 {
+  font-family: 'Comic Sans MS', 'Comic Neue', 'Open Sans', sans-serif;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 14px 0;
+}
+
+.social-circles {
+  display: flex;
+  gap: 14px;
+}
+
+.social-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  color: #1b2a6b !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.social-circle:hover {
+  transform: scale(1.08);
+  background: var(--charcoal-footer);
+  color: var(--white) !important;
+}
+
+.bottomrow2-contact {
+  color: var(--white);
+  font-size: 15px;
+  text-align: right;
+}
+
+.bottomrow2-contact strong {
+  display: block;
+  font-family: 'Comic Sans MS', 'Comic Neue', 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.bottomrow2-contact a {
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.bottomrow2-contact a:hover {
+  color: var(--charcoal-footer);
+}
+
+/* ==========================================================================
+   Footer (.footerrow)
+   ========================================================================== */
+
+.footerrow {
+  background: var(--charcoal-footer);
+  color: var(--footer-text);
+  padding: 28px 0;
+  font-size: 14px;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.copyright {
+  margin: 0;
+}
+
+ul.mnu_footermenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+ul.mnu_footermenu li {
+  margin: 0;
+}
+
+ul.mnu_footermenu a {
+  color: #cccccc;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+ul.mnu_footermenu a:hover {
+  color: var(--orange);
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+  ul.mnu_topmenu > li > a {
+    padding: 15px 14px;
+    font-size: 12px;
+  }
+
+  .banners-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .tile-caption {
+    display: block;
+  }
+
+  .terms-table th,
+  .terms-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  ul.mnu_topmenu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  ul.mnu_topmenu.is-open {
+    display: flex;
+  }
+
+  ul.mnu_topmenu > li > ul.submenu {
+    position: static;
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.08);
+    display: block;
+    padding-left: 15px;
+  }
+
+  .headerrow-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .headerrow-text {
+    padding-bottom: 10px;
+  }
+
+  .bottomrow2-contact {
+    text-align: left;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-contact {
+    justify-content: center;
+  }
+
+  .banners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .view,
+  .view .mask,
+  .view img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .headerrow-text .heading {
+    font-size: 28px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  ul.mnu_footermenu {
+    justify-content: center;
+  }
+}
